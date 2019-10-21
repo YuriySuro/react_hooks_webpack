@@ -39,7 +39,7 @@ let users = [
     }
 ];
 
-function emulateRequest(timeout = 500) {
+function emulateRequest(timeout = 200) {
     return new Promise((resolve) => {
         window.setTimeout(resolve, timeout);
     });

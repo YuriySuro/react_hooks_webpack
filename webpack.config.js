@@ -10,7 +10,8 @@ let conf = {
         filename: "index_bundle.js"
     },
     devServer: {
-        overlay: true
+        overlay: true,
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -21,7 +22,13 @@ let conf = {
             },
             {
                 test: /\.css$/,
-                use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader"]
+                use: [
+                { 
+                    loader: MiniCssExtractPlugin.loader,
+                    options: { hmr: process.env.NODE_ENV === "development" }
+                }, 
+                "css-loader"
+                ]
             }
         ]
     },
