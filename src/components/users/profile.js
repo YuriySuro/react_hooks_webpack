@@ -34,10 +34,17 @@ export default class extends React.PureComponent {
         this.setState({ something: this.state.something + 1 });
     }
 
+    derivedSomething = (something) => {
+        console.log("derived");
+        return something ** 8;
+    }
+
     render() {
         if(!this.state.loaded) {
             return <div>Loading...</div>
         }
+
+        let derived = this.derivedSomething(this.state.something); 
 
         return (
             <table className="table table-bordered">
@@ -53,6 +60,10 @@ export default class extends React.PureComponent {
                     <tr onClick={this.somethingInc}>
                         <td>Something Counter</td>
                         <td>{this.state.something}</td>
+                    </tr>
+                    <tr>
+                        <td>Something Derived</td>
+                        <td>{derived}</td>
                     </tr>
                 </tbody>
             </table>
