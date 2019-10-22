@@ -35,7 +35,12 @@ let conf = {
     plugins: [ 
         new HtmlWebpackPlugin({ template: "./src/index.html" }),
         new MiniCssExtractPlugin({ filename: '[name].css' }) 
-    ]
+    ],
+    resolve: {
+        alias: {
+            '~': path.resolve(__dirname, 'src')
+        }
+    }
 };
 
 module.exports = (env, options) => {

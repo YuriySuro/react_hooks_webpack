@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import * as usersApi from '../../api/users';
+import * as usersApi from '~/api/users';
 import UserProfile from './profile';
 
 

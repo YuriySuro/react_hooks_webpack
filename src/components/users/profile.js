@@ -1,5 +1,5 @@
 import React from 'react';
-import * as usersApi from '../../api/users';
+import * as usersApi from '~/api/users';
 
 export default class extends React.PureComponent {
     state = {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import * as usersApi from '../../api/users';
+import * as usersApi from '~/api/users';
 
 export default function(props) {
     let [user, setUser] = useState({ loaded: false, info: null });
